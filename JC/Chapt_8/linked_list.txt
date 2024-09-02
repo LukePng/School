@@ -1,0 +1,31 @@
+Insert(data:STRING, postition:INTEGER)
+    DECLARE new_node: Node
+    new_node <- Node(data) // create new node using Node class
+    IF postition = 1 THEN
+        new_node.Set_next(self.root)
+        self.root <- new_node
+    ELSE
+        DECLARE ptr: Node
+        DECLARE count: INTEGER
+        ptr <- self.root
+        count <- 0
+        WHILE count <> position
+            ptr <- ptr.Get_next()
+            count <- count + 1
+        new_node.Set_next(ptr.Get_next)
+        ptr.Set_next <- new_node
+    ENDIF
+EndOfInsert
+
+Delete(target:Node)
+    DECLARE ptr: Node
+    IF self.root = target
+        self.root <- self.root.Get_next()
+    ELSE
+        WHILE ptr.Get_next() <> target
+            ptr <- ptr.Get_next()
+
+        ptr.Set_next(ptr.Get_next().Get_next())
+        ENDWHILE
+    ENDIF
+EndOfDelete
